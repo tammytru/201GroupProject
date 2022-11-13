@@ -1,0 +1,16 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\frontend",
+    "\\frontend\\public",
+    "\\frontend\\src",
+    "\\frontend\\src\\components",
+    "\\frontend\\src\\components\\ExploreFeed",
+    "\\frontend\\src\\components\\Navbar",
+    "\\frontend\\src\\pages",
+    "\\frontend\\src\\pages\\Search-Page",
+    "\\frontend\\src\\pages\\Unregisted-User-Page"
+  ],
+  "SelectedNode": "\\frontend\\src\\pages\\Search-Page",
+  "PreviewInSolutionExplorer": false
+}
