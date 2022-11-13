@@ -11,7 +11,9 @@ export default function NavBarUnreg() {
         <main>
           <nav class="Navbar">
             <ul>
-              <li><Link to='..//pages/unregistered-user-page.js'>Explore</Link></li>
+                          <li><Link to='..//pages/Unregistered-User-Page/unregistered-user-page.js'>Explore</Link></li>
+                          <li><Link to='..//pages/SearchPage/search-page.js'>Search</Link></li>
+                          <li><Link to='..//pages/AccountPage/accountpage.js'>Account</Link></li>
             </ul>
           </nav>
 
@@ -30,7 +32,11 @@ export default function NavBarUnreg() {
 const UnregisteredHomePage = () => {
   <Fragment>
     <h3>Explore</h3>
-    {/* <FakeText /> */}
+      {/* <FakeText /> */}
+      <h3>Search</h3>
+      { }
   </Fragment>
 }
+
+
 
