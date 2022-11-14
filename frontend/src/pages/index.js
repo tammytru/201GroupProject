@@ -1,4 +1,5 @@
-export { default as UnregisteredHomePage } from './Unregisted-User-Page/unregistered-user-page.js'
+export { default as UnregisteredLandingPage } from './Unregistered-Landing-Page/unregistered-landing-page.js'
+export { default as UnregisteredExplorePage } from './Unregisted-Explore-Page/unregistered-explore-page.js'
 export { default as ExplorePage } from './Explore-Page/explore-page.js'
 export { default as FollowingPage } from './Following-Page/following-page.js'
 export { default as LoginPage } from './Login-Page/login-page.js'
