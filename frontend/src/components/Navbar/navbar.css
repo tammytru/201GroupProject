@@ -1,3 +1,21 @@
-.Navbar ul {
-    list-style-type: none;
+body {
+    margin: 0px;
 }
+
+.Navbar {
+    background: #FBCE76;
+    overflow: hidden;
+    align-items: center;
+}
+.Navbar nav {
+    position: relative;
+}
+#search-bar {
+    position: absolute;
+    width: 30%;
+    left: 33%;
+}
+#search-bar:active {
+    border-width: 2px;
+}
+
