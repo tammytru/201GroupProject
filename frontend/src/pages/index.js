@@ -1,3 +1,4 @@
+export { default as App } from './App/App.js'
 export { default as UnregisteredLandingPage } from './Unregistered-Landing-Page/unregistered-landing-page.js'
 export { default as UnregisteredExplorePage } from './Unregisted-Explore-Page/unregistered-explore-page.js'
 export { default as ExplorePage } from './Explore-Page/explore-page.js'

@@ -2,20 +2,16 @@ body {
     margin: 0px;
 }
 
-.Navbar {
+.navbar nav {
     background: #FBCE76;
-    overflow: hidden;
     align-items: center;
-}
-.Navbar nav {
-    position: relative;
-}
-#search-bar {
-    position: absolute;
-    width: 30%;
-    left: 33%;
-}
-#search-bar:active {
-    border-width: 2px;
+    display: flex;
+    justify-content: space-between;
+    padding: 1em 0em 1em 0em;
 }
 
+link {
+    color: black;
+    text-decoration: none;
+    font-size: 100px;
+}
