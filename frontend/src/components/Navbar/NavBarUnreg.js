@@ -29,28 +29,16 @@ const linkStyles_title = {
   color: 'black',
   textDecoration: 'none',
   fontSize: '20px',
-  // display: 'flex',
-  // float: 'left',
-  // padding: '10px',
-  // margin: '2px, 10px, 2px, 10px',
-  // textAlign: 'center',
 };
 
 const linkStyles_search = {
   color: 'black',
   textDecoration: 'none',
   fontSize: '20px',
-  // display: 'flex',
-  // float: 'none',
-  // padding: '10px',
-  // margin: '2px, 10px, 2px, 10px',
 };
 
 const linkStyles_button = {
   color: 'black',
   textDecoration: 'none',
   fontSize: '20px',
-  // float: 'right',
-  // padding: '10px',
-  // margin: '2px, 10px, 2px, 10px',
 };
