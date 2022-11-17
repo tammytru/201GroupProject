@@ -1,3 +1,4 @@
+import { NavBar } from '../../components';
 import './styles.css';
 
 export default function SearchPage() {

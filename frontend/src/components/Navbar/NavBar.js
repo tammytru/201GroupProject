@@ -2,10 +2,9 @@ import './navbar.css';
 import React from "react";
 import { NavBarReg, NavBarUnreg } from '..';
 
-export default function NavBar(  ) {
-    const user = false; //pass in user prop here. check if person is a real user and display proper navbar depending on that
-
-    if(!user) {
+export default function NavBar( {isUser} ) {
+    const isReg = isUser
+    if(!isReg) {
         return <NavBarUnreg/>
     } 
     return <NavBarReg/>

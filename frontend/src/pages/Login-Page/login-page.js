@@ -1,9 +1,11 @@
 import './styles.css';
 import React, { useState } from "react";
+import { NavBar } from '../../components';
+import ExplorePage from '../Explore-Page/explore-page';
 
-export default function LoginPage() {
+export default function LoginPage( {isUser, setisUser} ) {
     const [errorMessages, setErrorMessages] = useState({});
-    const [isSubmitted, setIsSubmitted] = useState(false);
+    // const [isUser, setisUser] = useState(false);
 
     const database = [
         {
@@ -33,7 +35,7 @@ export default function LoginPage() {
             if (userData.password !== pass.value) {
                 setErrorMessages({ name: "pass", message: errors.pass });
             } else {
-                setIsSubmitted(true);
+                setisUser(true);
             }
         } else {
             setErrorMessages({ name: "uname", message: errors.uname });
@@ -66,12 +68,19 @@ export default function LoginPage() {
     );
     
     return (
-        <div className="App">
-            <div className="login-form">
-                <div className="title">Sign In</div>
-                {isSubmitted ? <div>User is successfully logged in</div> : renderForm}
-            </div>
+        // isUser,
+        // render:(
+        // <div className="App">
+        //     <div className="login-form">
+        //         <div className="title">Sign In</div>
+        //         {isUser ? 
+        //             <div><NavBar/></div> 
+        //         : renderForm}
+        //     </div>
+        // </div>
+        <div>
+        {isUser ? <div><ExplorePage/></div> : renderForm}
         </div>
-    );
+    )
 }
 

@@ -9,7 +9,7 @@ export default function NavBarUnreg() {
       <nav>
         <div id="left">
           <img src="../../../assets/logo.jpg" alt="Cook book logo"/>
-          <Link exact to="/" style={linkStyles_title}>ReciPlease</Link>
+          <Link exact to="/" style={linkStyles_title}>Explore</Link>
         </div>
         <div id="middle">
           {/* <Link exact to="/search" style={linkStyles_search}><input type='text' placeholder='search' id='search-bar'/></Link> */}
