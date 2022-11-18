@@ -12,9 +12,10 @@
 
 input[type="text"],
 input[type="password"],
-input[type="email"]{
+input[type="email"] {
     height: 25px;
     border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
 }
 
 button[type="submit"] {
