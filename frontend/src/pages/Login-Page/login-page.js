@@ -64,9 +64,8 @@ export default function LoginPage( {isUser, setisUser} ) {
                 </div>
                 <div className="button-container">
                     <input type="submit" />
-                    <div class="space">
-                    </div>
-                    <Link exact to="/register-page">
+                    <div class="space"></div>
+                    <Link exact to="/register">
                         <button type = "register">Register</button>
                     </Link>
                 </div> 
@@ -86,6 +85,10 @@ export default function LoginPage( {isUser, setisUser} ) {
         //     </div>
         // </div>
         <div>
+            <div class="header">
+                <h1>  User Login</h1>
+            </div>
+       
         {isUser ? <div><ExplorePage/></div> : renderForm}
         </div>
     )
