@@ -2,6 +2,8 @@ import './styles.css';
 import React, { useState } from "react";
 import { NavBar } from '../../components';
 import ExplorePage from '../Explore-Page/explore-page';
+import { Link } from "react-router-dom";
+
 
 export default function LoginPage( {isUser, setisUser} ) {
     const [errorMessages, setErrorMessages] = useState({});
@@ -62,7 +64,12 @@ export default function LoginPage( {isUser, setisUser} ) {
                 </div>
                 <div className="button-container">
                     <input type="submit" />
-                </div>
+                    <div class="space">
+                    </div>
+                    <Link exact to="/register-page">
+                        <button type = "register">Register</button>
+                    </Link>
+                </div> 
             </form>
         </div>
     );

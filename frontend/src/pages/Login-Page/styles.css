@@ -16,18 +16,38 @@ input[type="password"] {
     border: 1px solid rgba(0, 0, 0, 0.2);
 }
 
+button[type="register"] {
+    margin-top: 10px;
+    cursor: pointer;
+    font-size: 15px;
+    background: #FBCE76;
+    border: 1px solid #000;
+    color: #fff;
+    padding: 10px 20px;
+}
+
+    button[type="register"]:hover {
+        background: #FBCE76;
+    }
+
+.space {
+    width: 10px;
+    height: auto;
+    display: inline-block;
+}
+
 input[type="submit"] {
     margin-top: 10px;
     cursor: pointer;
     font-size: 15px;
-    background: #01d28e;
-    border: 1px solid #01d28e;
+    background: #FBCE76;
+    border: 1px solid #000;
     color: #fff;
     padding: 10px 20px;
 }
 
     input[type="submit"]:hover {
-        background: #6cf0c2;
+        background: #FBCE76;
     }
 
 .button-container {
