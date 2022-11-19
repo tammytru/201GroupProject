@@ -1,7 +1,7 @@
 import './styles.css';
 import React, { useState } from "react";
 import ExplorePage from '../Explore-Page/explore-page';
-import { Link } from "react-router-dom";
+import { Link, Redirect, useLocation } from "react-router-dom";
 
 
 export default function LoginPage( {isUser, setisUser} ) {
@@ -35,6 +35,13 @@ export default function LoginPage( {isUser, setisUser} ) {
                 setErrorMessages({ name: "pass", message: errors.pass });
             } else {
                 setisUser(true);
+                // auth.authenticate(() => {
+                //     console.log('auth', isAuthticated)
+                //     setRedirectToReferrer(true);
+                // });
+                // if (redirectToReferrer) {
+                //     return <Redirect to={from} />;
+                // }
             }
         } else {
             setErrorMessages({ name: "uname", message: errors.uname });
@@ -79,4 +86,14 @@ export default function LoginPage( {isUser, setisUser} ) {
         </div>
     )
 }
+
+//from https://www.sitepoint.com/react-router-complete-guide/
+// export const auth = {
+//     isAuthticated: false,
+//     authenticate(cb) {
+//         this.isAuthticated = true;
+//         setTimeout(cb, 1000);
+
+//     }
+// };
 

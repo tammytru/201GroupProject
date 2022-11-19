@@ -1,7 +1,7 @@
 import { NavBar } from '../../components';
 import './styles.css';
 
-export default function ExplorePage() {
+export default function ExplorePage( {isUser, setisUser} ) {
     return (
         <div className="App">
             
