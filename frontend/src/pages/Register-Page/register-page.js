@@ -1,7 +1,8 @@
 import { useState } from 'react';
+import { Link, Redirect } from 'react-router-dom';
 import './styles.css';
 
-export default function RegisterPage() {
+export default function RegisterPage( {isUser, setisUser} ) {
 
 	// States for registration
 	const [firstName, setFirstName] = useState('');
@@ -50,6 +51,18 @@ export default function RegisterPage() {
 		} else {
 			setSubmitted(true);
 			setError(false);
+			console.log('firstname: ', firstName);
+			console.log('lastname: ', lastName);
+			console.log('username: ', username);
+			console.log('email: ', email);
+			console.log('password: ', password);
+			setFirstName('');
+			setLastName('');
+			setUsername('');
+			setEmail('');
+			setPassword('');
+
+			setisUser(true);
 		}
 	};
 
@@ -82,49 +95,49 @@ export default function RegisterPage() {
 	return (
 		<div className="form">
 			<div class="header">
-				<h1>  Register</h1>
+				<h1> Register</h1>
 			</div>
 
 			{/* Calling to the methods */}
 			<div className="messages">
 				{errorMessage()}
-				{successMessage()}
 			</div>
 
-			<form>
+			<form onSubmit={handleSubmit}>
 				{/* Labels and inputs for form data */}
 				<div className="input-container">
                     <label>First Name </label>
-                    <input type="text" name="fname" required />
+                    <input type="text" name="fname" onChange={handleFirstName} value={firstName} required />
                     {errorMessage()}
                 </div>
 				<div className="input-container">
                     <label>Last Name </label>
-                    <input type="text" name="lname" required />
+                    <input type="text" name="lname" onChange={handleLastName} value={lastName} required />
                     {errorMessage()}
                 </div>
 
 				<div className="input-container">
                     <label>Username </label>
-                    <input type="text" name="uname" required />
+                    <input type="text" name="uname" onChange={handleUsername} value={username} required />
                     {errorMessage()}
                 </div>
 
 				<div className="input-container">
                     <label>Email </label>
-                    <input type="email" name="email" required />
+                    <input type="email" name="email" onChange={handleEmail} value={email} required />
                     {errorMessage()}
                 </div>
 
 				<div className="input-container">
                     <label>Password </label>
-                    <input type="password" name="password" required />
+                    <input type="password" name="password" onChange={handlePassword} value={password} required />
                     {errorMessage()}
                 </div>
 
 				<div className="button-container">
 					<input type="submit" />
 				</div> 
+				{successMessage()}
 			</form>
 		</div>
 	);

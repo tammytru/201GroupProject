@@ -8,7 +8,7 @@ export default function NavBarReg() {
       {/* <h1>ReciPlease</h1> */}
       <nav>
         <div id="left-reg">
-          <img src="../../../assets/logo.jpg" alt="Cook book logo" id="logo"></img>
+          <img src={require("../../assets/logo.png")} alt="Cook book logo" id="logo"></img>
           <Link exact to="/" style={linkStyles_left} class="link">Explore</Link>
           <Link exact to="/following" style={linkStyles_left} class="link">Following</Link>
         </div>
@@ -32,6 +32,7 @@ const linkStyles_left = {
   color: 'black',
   textDecoration: 'none',
   fontSize: '20px',
+  verticleAlign: 'middle',
 };
 
 const linkStyles_middle = {

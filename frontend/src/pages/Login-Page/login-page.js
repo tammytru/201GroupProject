@@ -1,13 +1,11 @@
 import './styles.css';
 import React, { useState } from "react";
-import { NavBar } from '../../components';
 import ExplorePage from '../Explore-Page/explore-page';
 import { Link } from "react-router-dom";
 
 
 export default function LoginPage( {isUser, setisUser} ) {
     const [errorMessages, setErrorMessages] = useState({});
-    // const [isUser, setisUser] = useState(false);
 
     const database = [
         {
@@ -24,8 +22,7 @@ export default function LoginPage( {isUser, setisUser} ) {
         uname: "invalid username",
         pass: "invalid password"
     };
-    
-    
+
     const handleSubmit = (event) => {
         event.preventDefault();
 
@@ -51,6 +48,9 @@ export default function LoginPage( {isUser, setisUser} ) {
     
     const renderForm = (
         <div className="form">
+            <div class="header">
+                <h1>  User Login</h1>
+            </div>
             <form onSubmit={handleSubmit}>
                 <div className="input-container">
                     <label>Username </label>
@@ -74,21 +74,7 @@ export default function LoginPage( {isUser, setisUser} ) {
     );
     
     return (
-        // isUser,
-        // render:(
-        // <div className="App">
-        //     <div className="login-form">
-        //         <div className="title">Sign In</div>
-        //         {isUser ? 
-        //             <div><NavBar/></div> 
-        //         : renderForm}
-        //     </div>
-        // </div>
         <div>
-            <div class="header">
-                <h1>  User Login</h1>
-            </div>
-       
         {isUser ? <div><ExplorePage/></div> : renderForm}
         </div>
     )

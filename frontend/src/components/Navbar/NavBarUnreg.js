@@ -7,8 +7,9 @@ export default function NavBarUnreg() {
     <div className="navbar">
       {/* <h1>ReciPlease</h1> */}
       <nav>
+        
         <div id="left">
-          <img src="../../../assets/logo.jpg" alt="Cook book logo" id="logo"></img>
+          <img src={require("../../assets/logo.png")} alt="Cook book logo" id="logo"></img>
           <Link exact to="/" style={linkStyles_title}>Explore</Link>
         </div>
         <div id="middle">
@@ -29,6 +30,7 @@ const linkStyles_title = {
   color: 'black',
   textDecoration: 'none',
   fontSize: '20px',
+  verticleAlign: 'middle',
 };
 
 const linkStyles_search = {

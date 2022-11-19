@@ -33,7 +33,7 @@ export default function App() {
                 <MessagesPage/>
             </Route>
             <Route exact path="/register">
-                <RegisterPage/>
+                <RegisterPage isUser={isUser} setisUser={setisUser}/>
             </Route>
             <Route exact path="/userprofile">
                 <UserProfilePage isUser={isUser} setisUser={setisUser}/>

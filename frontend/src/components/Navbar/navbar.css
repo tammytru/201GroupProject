@@ -10,16 +10,19 @@ body {
     padding: 1em 0em 1em 0em;
 }
 
+#logo {
+    height: 3em;
+    padding-right: 1em;
+    vertical-align: middle;
+}
+
 #left {
     margin-left: 1em;
+    align-items: center;
 }
 
 #right {
     margin-right: 1em;
-}
-
-#logo {
-    margin-right: 6em;
 }
 
 .link {
