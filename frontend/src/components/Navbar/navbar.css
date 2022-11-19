@@ -18,3 +18,23 @@ body {
     margin-right: 1em;
 }
 
+#logo {
+    margin-right: 6em;
+}
+
+.link {
+    padding: 0.5em;
+}
+
+#left-reg {
+    margin-left: 1em;
+    align-content: center;
+}
+
+#middle-reg {
+    margin-right: 1em;
+}
+
+#right-reg {
+    margin-right: 1em;
+}

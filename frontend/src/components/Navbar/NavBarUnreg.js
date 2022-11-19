@@ -8,7 +8,7 @@ export default function NavBarUnreg() {
       {/* <h1>ReciPlease</h1> */}
       <nav>
         <div id="left">
-          <img src="../../../assets/logo.jpg" alt="Cook book logo"/>
+          <img src="../../../assets/logo.jpg" alt="Cook book logo" id="logo"></img>
           <Link exact to="/" style={linkStyles_title}>Explore</Link>
         </div>
         <div id="middle">

@@ -7,19 +7,19 @@ export default function NavBarReg() {
     <div className="navbar">
       {/* <h1>ReciPlease</h1> */}
       <nav>
-        <div id="left">
-          <img src="../../../assets/logo.jpg" alt="Cook book logo"/>
-          <Link exact to="/" style={linkStyles_title}>Explore</Link>
-          <Link exact to="/following" style={linkStyles_title}>Following</Link>
+        <div id="left-reg">
+          <img src="../../../assets/logo.jpg" alt="Cook book logo" id="logo"></img>
+          <Link exact to="/" style={linkStyles_left} class="link">Explore</Link>
+          <Link exact to="/following" style={linkStyles_left} class="link">Following</Link>
         </div>
-        <div id="middle">
+        <div id="middle-reg">
           {/* <Link exact to="/search" style={linkStyles_search}><input type='text' placeholder='search' id='search-bar'/></Link> */}
-          <Link exact to="/search" style={linkStyles_search}>Search</Link>
+          <Link exact to="/search" style={linkStyles_middle} class="link">Search</Link>
         </div>
-        <div id="right">
-          <Link exact to="/newpost" style={linkStyles_button}>New Post</Link>
-          <Link exact to="/messages" style={linkStyles_title}>Messages</Link>
-          <Link exact to="/userprofile" style={linkStyles_title}>Profile</Link>
+        <div id="right-reg">
+          <Link exact to="/newpost" style={linkStyles_right} class="link">New Post</Link>
+          <Link exact to="/messages" style={linkStyles_right} class="link">Messages</Link>
+          <Link exact to="/userprofile" style={linkStyles_right} class="link">Profile</Link>
         </div>
 
       </nav>
@@ -28,19 +28,19 @@ export default function NavBarReg() {
   );
 }
 
-const linkStyles_title = {
+const linkStyles_left = {
   color: 'black',
   textDecoration: 'none',
   fontSize: '20px',
 };
 
-const linkStyles_search = {
+const linkStyles_middle = {
   color: 'black',
   textDecoration: 'none',
   fontSize: '20px',
 };
 
-const linkStyles_button = {
+const linkStyles_right = {
   color: 'black',
   textDecoration: 'none',
   fontSize: '20px',

@@ -1,17 +1,14 @@
 import './App.css';
 import React, { useState } from 'react';
-import { Switch, Route, useNavigate } from 'react-router-dom'
+import { Switch, Route} from 'react-router-dom'
 import { LoginPage, ExplorePage, SearchPage, NewPostPage, FollowingPage, MessagesPage, UserProfilePage } from '../../pages'
 import { NavBar } from '../../components';
 
 export default function App() {
-    const user = false; //pass in user prop here. check if person is a real user and display proper navbar depending on that
-    // const {render, isUser} = LoginPage();
     const [isUser, setisUser] = useState(false)
     console.log(isUser)
     return (
         <div>
-        {/* <h1>MY APP</h1> */}
         <NavBar isUser={isUser}></NavBar>
         
 
@@ -24,7 +21,6 @@ export default function App() {
             </Route>
             <Route exact path="/login">
                 <LoginPage isUser={isUser} setisUser={setisUser}/>
-                {/* {render} */}
             </Route>
             <Route exact path="/following">
                 <FollowingPage/>
