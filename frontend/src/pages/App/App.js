@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { Switch, Route, useNavigate } from 'react-router-dom'
 import { LoginPage, ExplorePage, SearchPage, NewPostPage, FollowingPage, MessagesPage, UserProfilePage } from '../../pages'
 import { NavBar } from '../../components';
+import { RegisterPage } from '../index';
 
 export default function App() {
     const user = false; //pass in user prop here. check if person is a real user and display proper navbar depending on that
@@ -34,6 +35,9 @@ export default function App() {
             </Route>
             <Route exact path="/messages">
                 <MessagesPage/>
+            </Route>
+            <Route exact path="/register">
+                <RegisterPage/>
             </Route>
             <Route exact path="/userprofile">
                 <UserProfilePage isUser={isUser} setisUser={setisUser}/>
