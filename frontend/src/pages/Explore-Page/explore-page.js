@@ -1,4 +1,3 @@
-import { NavBar } from '../../components';
 import './styles.css';
 
 export default function ExplorePage( {isUser, setisUser} ) {
