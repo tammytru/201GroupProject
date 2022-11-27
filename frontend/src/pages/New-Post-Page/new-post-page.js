@@ -2,7 +2,7 @@ import './styles.css';
 import { useState } from 'react';
 import cuisineList from '../../assets/cuisines.json';
 
-export default function NewPostPage( {isUser, setisUser}, props ) {
+export default function NewPostPage( props ) {
     // states for checking the errors
 	const [submitted, setSubmitted] = useState(false);
 	const [error, setError] = useState(false);

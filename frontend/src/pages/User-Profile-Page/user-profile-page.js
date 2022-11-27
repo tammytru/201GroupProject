@@ -1,11 +1,15 @@
 import { Redirect } from 'react-router-dom';
 import './styles.css';
 
-export default function UserProfilePage( {isUser, setisUser} ) {
+export default function UserProfilePage( { isUser, setisUser, userID, setuserID } ) {
 
   const logout = (event) => {
     event.preventDefault();
-    if(isUser) { setisUser(false) }
+    console.log("logout: ", isUser)
+    if(isUser) { 
+      setisUser(false) 
+      setuserID(-1);
+    }
   };
 
   return (

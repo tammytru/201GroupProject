@@ -9,17 +9,17 @@ export default function NavBarReg() {
       <nav>
         <div id="left-reg">
           <img src={require("../../assets/logo.png")} alt="Cook book logo" id="logo"></img>
-          <Link exact to="/" style={linkStyles_left} class="link">Explore</Link>
-          <Link exact to="/following" style={linkStyles_left} class="link">Following</Link>
+          <Link exact="true" to="/" style={linkStyles_left} className="link">Explore</Link>
+          <Link exact="true" to="/following" style={linkStyles_left} className="link">Following</Link>
         </div>
         <div id="middle-reg">
           {/* <Link exact to="/search" style={linkStyles_search}><input type='text' placeholder='search' id='search-bar'/></Link> */}
-          <Link exact to="/search" style={linkStyles_middle} class="link">Search</Link>
+          <Link exact="true" to="/search" style={linkStyles_middle} className="link">Search</Link>
         </div>
         <div id="right-reg">
-          <Link exact to="/newpost" style={linkStyles_right} class="link">New Post</Link>
-          <Link exact to="/messages" style={linkStyles_right} class="link">Messages</Link>
-          <Link exact to="/userprofile" style={linkStyles_right} class="link">Profile</Link>
+          <Link exact="true" to="/newpost" style={linkStyles_right} className="link">New Post</Link>
+          <Link exact="true" to="/messages" style={linkStyles_right} className="link">Messages</Link>
+          <Link exact="true" to="/userprofile" style={linkStyles_right} className="link">Profile</Link>
         </div>
 
       </nav>
@@ -39,6 +39,7 @@ const linkStyles_middle = {
   color: 'black',
   textDecoration: 'none',
   fontSize: '20px',
+  marginLeft: '2em',
 };
 
 const linkStyles_right = {

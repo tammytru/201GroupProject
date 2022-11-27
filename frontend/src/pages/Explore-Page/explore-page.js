@@ -1,6 +1,6 @@
 import './styles.css';
 
-export default function ExplorePage( {isUser, setisUser} ) {
+export default function ExplorePage( props ) {
     return (
         <div className="App">
             

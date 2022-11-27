@@ -7,9 +7,11 @@ import { RegisterPage } from '../index';
 
 export default function App() {
     const [isUser, setisUser] = useState(false)
+    const [userID, setuserID] = useState(-1);
+    
     return (
         <div>
-        <NavBar isUser={isUser}></NavBar>
+        <NavBar isUser={isUser} userID={userID} ></NavBar>
         
 
         <Switch>
@@ -20,15 +22,15 @@ export default function App() {
                 <SearchPage/>
             </Route>
             <Route exact path="/login">
-                <LoginPage isUser={isUser} setisUser={setisUser}/>
+                <LoginPage isUser={isUser} setisUser={setisUser} userID={userID} setuserID={setuserID}/>
             </Route>
-            <PrivateRoute exact path="/following" isUser={isUser} component={FollowingPage} />
-            <PrivateRoute exact path="/newpost" isUser={isUser} component={NewPostPage} />
-            <PrivateRoute exact path="/messages" isUser={isUser} component={MessagesPage} />
+            <PrivateRoute exact path="/following" isUser={isUser} userID={userID} component={FollowingPage} />
+            <PrivateRoute exact path="/newpost" isUser={isUser} userID={userID} component={NewPostPage} />
+            <PrivateRoute exact path="/messages" isUser={isUser} userID={userID} component={MessagesPage} />
             <Route exact path="/register">
-                <RegisterPage isUser={isUser} setisUser={setisUser}/>
+                <RegisterPage isUser={isUser} setisUser={setisUser} userID={userID} setuserID={setuserID}/>
             </Route>
-            <PrivateRoute exact path="/userprofile" isUser={isUser} component={UserProfilePage}/>
+            <PrivateRoute exact path="/userprofile" isUser={isUser} setisUser={setisUser} userID={userID} component={UserProfilePage}/>
         </Switch>
         </div>
     );

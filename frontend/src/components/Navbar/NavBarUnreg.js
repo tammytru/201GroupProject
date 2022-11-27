@@ -10,14 +10,14 @@ export default function NavBarUnreg() {
         
         <div id="left">
           <img src={require("../../assets/logo.png")} alt="Cook book logo" id="logo"></img>
-          <Link exact to="/" style={linkStyles_title}>Explore</Link>
+          <Link exact="true" to="/" style={linkStyles_title}>Explore</Link>
         </div>
         <div id="middle">
           {/* <Link exact to="/search" style={linkStyles_search}><input type='text' placeholder='search' id='search-bar'/></Link> */}
-          <Link exact to="/search" style={linkStyles_search}>Search</Link>
+          <Link exact="true" to="/search" style={linkStyles_search}>Search</Link>
         </div>
         <div id="right">
-          <Link exact to="/login" style={linkStyles_button}>Login/Register</Link>
+          <Link exact="true" to="/login" style={linkStyles_button}>Login/Register</Link>
         </div>
 
       </nav>
