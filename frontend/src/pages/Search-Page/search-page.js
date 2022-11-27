@@ -59,7 +59,7 @@ export default function SearchPage( {isSearch, setisSearch} ) {
 				{/* Labels and inputs for form data */}
 				<div className="input-container">
                     <label> Enter a Term </label>
-                    <input type="text" name="search" onChange={handleSearch} value={search} required />
+                    <input type="search" name="search" onChange={handleSearch} value={search} required />
                     {errorMessage()}
                 </div>
 				<div className="button-container">
