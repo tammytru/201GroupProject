@@ -84,6 +84,10 @@ export default function NewPostPage( {isUser, setisUser}, props ) {
                     {errorMessage()}
                 </div>
                 <div className="input-container">
+                    <label>Image Upload</label>
+                    <input type="file" id="recipePhoto" name="recipePicture" required />
+                </div>
+                <div className="input-container">
                     <label>Prep Time </label>
                     <input type="number" name="prepTime" onChange={handlePrepTime} value={prepTime} required />
                     <select name="timeUnit" id="prepTime_dropdown">
@@ -112,7 +116,9 @@ export default function NewPostPage( {isUser, setisUser}, props ) {
                     </select>
                     {errorMessage()}
                 </div>
-
+                <div className="button-container">
+					<input type="submit" />
+				</div>     
             </form>
         </div>
     );
