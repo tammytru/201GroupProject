@@ -1,70 +1,54 @@
-import { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Redirect } from 'react-router-dom';
 import './styles.css';
 import axios from '../../api/axios';
+import defaultProfilePic from '../../assets/user_smile.png' 
 
-export default function UserProfilePage( { isUser, setisUser, userID, setuserID } ) {
-  const [profImg, setProfImg] = useState('')
+export default function UserProfilePage( {isUser, setisUser, userID, setuserID} ) {
+  const [user, setUser] = React.useState();
 
   const logout = (event) => {
     event.preventDefault();
     console.log("logout: ", isUser)
     if(isUser) { 
+      console.log(userID)
       setisUser(false) 
-      setuserID(-1);
+      // setuserID(-1);
     }
   };
 
-  const handleSubmit = async (e) => {
-		e.preventDefault();
+  const URL = "/Assignment4Backend/RegisterUser?userID=" + userID;
+  useEffect (() => {
+    try {
+      axios.get(URL).then((response) => {
+        console.log(response)
+        setUser(response.data);
+      })
+    } catch (err) {
+      console.log(err)
+    }
+  }, []);
 
-		const data = {
-			profileImage: profImg
-		}
-
-    // console.log(profImg)
-		// try {
-		// 	const URL = "http://freeimage.host/api/1/upload/?key=" + API_KEY + "&source="+ profImg + "&format=json"
-		// 	//+ "&profileImage=/'/'&bio=/'/'"
-		// 	const response = await axios.post(URL, data, {
-		// 		headers: {
-		// 			'Content-Type': 'application/json',
-    //                 'Access-Control-Allow-Origin': "*",
-		// 		}
-		// 	})
-		// 	.then((response) => {
-		// 		console.log(response)
-		// 		// setuserID(response.data.userID)
-		// 	});
-    //   // console.log('img ', profImg)
-
-
-		// } catch (err) {
-		// 	console.log(err.response?.status)
-		// }
-
-	};
+  const renderUserProfile = (
+    <div>
+      {user?.profileImage 
+        ? <div>
+          <img src={user?.profileImage} alt="default profile pic"/>
+        </div> 
+        : <div>
+          <img src={defaultProfilePic} alt="default profile pic"/>
+        </div>}
+      <h1>WELCOME {user?.name}</h1>
+      
+      <button onClick={logout}>Log Out</button>
+    </div>
+  );
 
   return (
     <div className="App">
-      <h1>USER PROFILE</h1>
-      <button onClick={logout}>Log Out</button>
-      
-      {/* <form onSubmit={handleSubmit}>
-        <div className="input-container">
-            <label>Image Upload</label>
-            <input 
-              type="file" 
-              name="profImg" 
-              onChange={(e) => setProfImg(e.target.value)} 
-              value={profImg} 
-              required
-            />
-        </div>
-        <div className="button-container">
-					<input type="submit" />
-				</div>    
-      </form> */}
+
+      {user ? renderUserProfile : <div>LOADING</div>}
+      {/* {isUser ? <div><ExplorePage/></div> : renderForm} */}
 
     </div>
   );

@@ -1,5 +1,5 @@
 import './navbar.css';
-import React, { useEffect } from "react";
+import React from "react";
 import { NavBarReg, NavBarUnreg } from '..';
 
 export default function NavBar( {isUser, userID} ) {
