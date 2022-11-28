@@ -11,7 +11,8 @@ export default function App() {
     
     return (
         <div>
-        <NavBar isUser={isUser} userID={userID} ></NavBar>
+        <div id="navbar"><NavBar isUser={isUser} userID={userID} ></NavBar></div>    
+            
         
 
         <Switch>
