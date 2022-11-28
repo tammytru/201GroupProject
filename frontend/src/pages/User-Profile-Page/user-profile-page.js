@@ -4,9 +4,6 @@ import './styles.css';
 import axios from '../../api/axios';
 
 export default function UserProfilePage( { isUser, setisUser, userID, setuserID } ) {
-  //freeimage.host api key
-  const API_KEY = "6d207e02198a847aa98d0a2a901485a5";
-
   const [profImg, setProfImg] = useState('')
 
   const logout = (event) => {
@@ -53,7 +50,7 @@ export default function UserProfilePage( { isUser, setisUser, userID, setuserID 
       <h1>USER PROFILE</h1>
       <button onClick={logout}>Log Out</button>
       
-      <form onSubmit={handleSubmit}>
+      {/* <form onSubmit={handleSubmit}>
         <div className="input-container">
             <label>Image Upload</label>
             <input 
@@ -67,7 +64,7 @@ export default function UserProfilePage( { isUser, setisUser, userID, setuserID 
         <div className="button-container">
 					<input type="submit" />
 				</div>    
-      </form>
+      </form> */}
 
     </div>
   );
