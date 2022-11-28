@@ -25,26 +25,26 @@ export default function UserProfilePage( { isUser, setisUser, userID, setuserID 
 			profileImage: profImg
 		}
 
-    console.log(profImg)
-		try {
-			const URL = "http://freeimage.host/api/1/upload/?key=" + API_KEY + "&source="+ profImg + "&format=json"
-			//+ "&profileImage=/'/'&bio=/'/'"
-			const response = await axios.post(URL, data, {
-				headers: {
-					'Content-Type': 'application/json',
-                    'Access-Control-Allow-Origin': "*",
-				}
-			})
-			.then((response) => {
-				console.log(response)
-				// setuserID(response.data.userID)
-			});
-      // console.log('img ', profImg)
+    // console.log(profImg)
+		// try {
+		// 	const URL = "http://freeimage.host/api/1/upload/?key=" + API_KEY + "&source="+ profImg + "&format=json"
+		// 	//+ "&profileImage=/'/'&bio=/'/'"
+		// 	const response = await axios.post(URL, data, {
+		// 		headers: {
+		// 			'Content-Type': 'application/json',
+    //                 'Access-Control-Allow-Origin': "*",
+		// 		}
+		// 	})
+		// 	.then((response) => {
+		// 		console.log(response)
+		// 		// setuserID(response.data.userID)
+		// 	});
+    //   // console.log('img ', profImg)
 
 
-		} catch (err) {
-			console.log(err.response?.status)
-		}
+		// } catch (err) {
+		// 	console.log(err.response?.status)
+		// }
 
 	};
 
