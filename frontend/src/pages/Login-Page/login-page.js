@@ -21,6 +21,9 @@ export default function LoginPage( {isUser, setisUser, userID, setuserID} ) {
 
     useEffect(() => {
         if(userID !== -1) {
+            localStorage.setItem('userID', userID)
+            localStorage.setItem('isUser', true)
+            localStorage.setItem('username', user)
             setUser('')
             setPassword('')
             setisUser(true);
@@ -51,7 +54,7 @@ export default function LoginPage( {isUser, setisUser, userID, setuserID} ) {
                 .then((response) => {
                     console.log(response)
                     setuserID(response.data.userID)
-                    console.log(response.data.userID)
+                    // console.log(response.data.userID)
                     
                 });
             
@@ -120,7 +123,7 @@ export default function LoginPage( {isUser, setisUser, userID, setuserID} ) {
     
     return (
         <div>
-        {isUser ? <div><ExplorePage/></div> : renderForm}
+        {localStorage.getItem('isUser') ? <div><ExplorePage/></div> : renderForm}
         </div>
     )
 }

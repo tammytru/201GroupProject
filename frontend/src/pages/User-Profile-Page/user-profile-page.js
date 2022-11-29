@@ -1,23 +1,24 @@
 import React, { useState, useEffect } from 'react';
-import { Redirect } from 'react-router-dom';
+import { Redirect, Link } from 'react-router-dom';
 import './styles.css';
 import axios from '../../api/axios';
 import defaultProfilePic from '../../assets/user_smile.png' 
 
-export default function UserProfilePage( {isUser, setisUser, userID, setuserID} ) {
+
+export default function UserProfilePage( { userID} ) {
   const [user, setUser] = React.useState();
 
   const logout = (event) => {
     event.preventDefault();
-    console.log("logout: ", isUser)
-    if(isUser) { 
+    if(localStorage.getItem('isUser')) { 
       console.log(userID)
-      setisUser(false) 
-      // setuserID(-1);
+      localStorage.clear();
+      window.location.reload(false)
     }
   };
 
-  const URL = "/Assignment4Backend/RegisterUser?userID=" + userID;
+  console.log(localStorage.getItem('userID'))
+  const URL = "/Assignment4Backend/RegisterUser?userID=" + localStorage.getItem("userID");
   useEffect (() => {
     try {
       axios.get(URL).then((response) => {
@@ -31,26 +32,25 @@ export default function UserProfilePage( {isUser, setisUser, userID, setuserID} 
 
   const renderUserProfile = (
     <div>
-      {user?.profileImage 
+      {user?.profileImage
         ? <div>
-          <img src={user?.profileImage} alt="default profile pic"/>
+          <img src={user?.profileImage} alt="user profile pic"/>
         </div> 
         : <div>
-          <img src={defaultProfilePic} alt="default profile pic"/>
+          <img src={defaultProfilePic} alt=" default profile pic"/>
         </div>}
       <h1>WELCOME {user?.name}</h1>
       
       <button onClick={logout}>Log Out</button>
+      {/* <Link exact="true" to="/" onClick={logout}>Log Out</Link> */}
     </div>
   );
 
   return (
-    <div className="App">
-
-      {user ? renderUserProfile : <div>LOADING</div>}
-      {/* {isUser ? <div><ExplorePage/></div> : renderForm} */}
-
+    <div>
+      {localStorage.getItem('isUser') ? renderUserProfile : <div>LOADING</div>}
     </div>
+    
   );
 }
 
