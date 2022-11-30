@@ -21,8 +21,7 @@ export default function Feed() {
         }
     }, []);
 
-    return (
-
+    const renderFeed = (
         <div>
             {
                 Object.keys(posts).map(p => {
@@ -36,7 +35,12 @@ export default function Feed() {
                 })
             }
         </div>
-            
+    )
+
+    return (
+        <div>
+        {numPosts >>> 0 ? renderFeed : <div>NO NEW POSTS</div>}
+        </div>
     );
     
 };

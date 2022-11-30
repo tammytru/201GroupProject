@@ -9,7 +9,7 @@ export default function Post({ postID }) {
   useEffect (() => {
     try {
       axios.get(URL).then((response) => {
-        console.log(response)
+        // console.log(response)
         setPost(response.data);
       })
     } catch (err) {
