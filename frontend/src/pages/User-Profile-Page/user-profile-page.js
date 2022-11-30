@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { Redirect, Link } from 'react-router-dom';
 import './styles.css';
 import axios from '../../api/axios';
 import defaultProfilePic from '../../assets/user_smile.png' 
@@ -28,7 +27,7 @@ export default function UserProfilePage( { userID} ) {
     } catch (err) {
       console.log(err)
     }
-  }, []);
+  });
 
   const renderUserProfile = (
     <div>

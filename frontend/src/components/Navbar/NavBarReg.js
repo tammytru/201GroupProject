@@ -10,7 +10,7 @@ export default function NavBarReg() {
         <div id="left-reg">
           <img src={require("../../assets/logo.png")} alt="Cook book logo" id="logo"></img>
           <Link exact="true" to="/" style={linkStyles_left} className="link">Explore</Link>
-          <Link exact="true" to="/following" style={linkStyles_left} className="link">Following</Link>
+          {/* <Link exact="true" to="/following" style={linkStyles_left} className="link">Following</Link> */}
         </div>
         <div id="middle-reg">
           {/* <Link exact to="/search" style={linkStyles_search}><input type='text' placeholder='search' id='search-bar'/></Link> */}

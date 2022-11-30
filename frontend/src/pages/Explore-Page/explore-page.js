@@ -1,12 +1,13 @@
-import { Post } from '../../components';
+import { Feed, Post } from '../../components';
 import './styles.css';
 
-export default function ExplorePage( props ) {
+export default function ExplorePage( ) {
     return (
         <div className="App">
             
             <h1>EXPLORE PAGE</h1>
-            <Post postID={1}/>
+            <Feed/>
+
         </div>
     );
 }

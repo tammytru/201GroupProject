@@ -12,6 +12,7 @@ export default function NewPostPage( ) {
     const [name, setName] = useState('')
     const [text, setText] = useState('')
     const [img, setImg] = useState('')
+    const [rating, setRating] = useState(0);
     const userID = localStorage.getItem('userID')
     var today = new Date();
     const date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate()
@@ -38,12 +39,12 @@ export default function NewPostPage( ) {
             text: text,
             image: img, 
             userID: userID,
-            rating: 0,
+            rating: rating,
             date: date
         }
 
         try {
-            const URL = "/Assignment4Backend/Recipe?name=" + name + "&text=" + text + "&image=" + img + "&userID=" + userID + "&rating=" + 0 + "&date=" + date
+            const URL = "/Assignment4Backend/Recipe?name=" + name + "&text=" + text + "&image=" + img + "&userID=" + userID + "&rating=" + rating + "&date=" + date
             const response = await axios.post(URL, data, {
                 headers: {
 					'Content-Type': 'application/json',
@@ -56,7 +57,8 @@ export default function NewPostPage( ) {
                 setName('')
                 setText('')
                 setImg('')
-                window.alert(name, "Posted!")
+                setRating(0)
+                window.alert("Post Successful!")
             })
         } catch (err) {
             window.alert("Post Failed")
@@ -101,6 +103,19 @@ export default function NewPostPage( ) {
                         name="img" 
                         onChange={(e) => setImg(e.target.value)} 
                         value={img} 
+                        required 
+                    />
+                    {errorMessage()}
+                </div>
+                <div className="input-container">
+                    <label>Recipe Rating: {rating} </label>
+                    <input 
+                        type="range" 
+                        name="rating" 
+                        max="5"
+                        min="1"
+                        onChange={(e) => setRating(e.target.value)} 
+                        value={rating} 
                         required 
                     />
                     {errorMessage()}
