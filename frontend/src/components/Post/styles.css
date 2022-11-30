@@ -1,0 +1,19 @@
+#post-container {
+    width: 60%;
+    border: 2px solid black;
+    display: flex;
+    /* align-items: center;
+    justify-content: center; */
+    flex-direction: column;
+    margin-left: 20%;
+
+}
+
+.post-details {
+    padding: 1em 2em 1em 2em;
+}
+
+.post-image {
+    width: 100%;
+    height: auto;
+}
