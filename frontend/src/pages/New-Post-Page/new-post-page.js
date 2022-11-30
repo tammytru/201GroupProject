@@ -129,7 +129,7 @@ export default function NewPostPage( ) {
     )
 
     return (
-        <div>
+        <div className=''>
           {localStorage.getItem('isUser') ? renderForm : <div>LOADING</div>}
         </div>
         

@@ -1,3 +1,6 @@
+.form {
+    margin-top: 7em;
+}
 .login-page {
     font-family: sans-serif;
     display: flex;

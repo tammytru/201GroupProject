@@ -11,7 +11,7 @@ export default function App() {
     
     return (
         <div>
-        <div id="navbar"><NavBar isUser={isUser} userID={userID} ></NavBar></div>    
+        <div><NavBar isUser={isUser} userID={userID} ></NavBar></div>    
             
         
 

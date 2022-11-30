@@ -1,3 +1,7 @@
+.App {
+    margin-top: 7em;
+}
+
 .new-post-page {
     font-family: sans-serif;
     display: flex;
@@ -8,6 +12,7 @@
     height: 100vh;
     font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
     background-color: #f8f9fd;
+    margin-top: 7em;
 }
 
 input[type="text"],

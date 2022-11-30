@@ -52,7 +52,12 @@ export default function LoginPage( {isUser, setisUser, userID, setuserID} ) {
                     // withCredentials: true
                 })
                 .then((response) => {
-                    console.log(response)
+                    console.log(response) 
+                    if(response.data.userID === -1) {
+                        window.alert('Incorrect username and password.')
+                        setUser('')
+                        setPassword('')
+                    }
                     setuserID(response.data.userID)
                     // console.log(response.data.userID)
                     

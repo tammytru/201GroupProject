@@ -16,12 +16,12 @@ export default function UserProfilePage( { userID} ) {
     }
   };
 
-  console.log(localStorage.getItem('userID'))
+  // console.log(localStorage.getItem('userID'))
   const URL = "/Assignment4Backend/RegisterUser?userID=" + localStorage.getItem("userID");
   useEffect (() => {
     try {
       axios.get(URL).then((response) => {
-        console.log(response)
+        // console.log(response)
         setUser(response.data);
       })
     } catch (err) {
@@ -30,7 +30,7 @@ export default function UserProfilePage( { userID} ) {
   });
 
   const renderUserProfile = (
-    <div>
+    <div className='user-profile-page'>
       {user?.profileImage
         ? <div>
           <img src={user?.profileImage} alt="user profile pic"/>
