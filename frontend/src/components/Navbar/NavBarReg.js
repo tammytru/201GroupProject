@@ -8,7 +8,7 @@ export default function NavBarReg() {
       {/* <h1>ReciPlease</h1> */}
       <nav>
         <div id="left-reg">
-          <img src={require("../../assets/logo.png")} alt="Cook book logo" id="logo"></img>
+          <img src={require("../../assets/Recipes.png")} alt="Cook book logo" id="logo"></img>
           <Link exact="true" to="/" style={linkStyles_left} className="link">Explore</Link>
           {/* <Link exact="true" to="/following" style={linkStyles_left} className="link">Following</Link> */}
         </div>

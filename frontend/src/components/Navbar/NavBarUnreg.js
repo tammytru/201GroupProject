@@ -9,7 +9,7 @@ export default function NavBarUnreg() {
       <nav>
         
         <div id="left">
-          <img src={require("../../assets/logo.png")} alt="Cook book logo" id="logo"></img>
+          <img src={require("../../assets/Recipes.png")} alt="Cook book logo" id="logo"></img>
           <Link exact="true" to="/" style={linkStyles_title}>Explore</Link>
         </div>
         <div id="middle">

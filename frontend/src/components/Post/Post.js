@@ -2,48 +2,35 @@ import React, {useEffect} from 'react';
 import './styles.css';
 import axios from '../../api/axios';
 
-export default function Post({ postID }) {
+export default function Post({ postID, image, date, rating, name, text }) {
   const [post, setPost] = React.useState();
-
-  const URL = "/Assignment4Backend/Recipe?postID=" + postID;
-  useEffect (() => {
-    try {
-      axios.get(URL).then((response) => {
-        // console.log(response)
-        setPost(response.data);
-      })
-    } catch (err) {
-      console.log(err)
-    }
-  }, []);
 
   return (
     <div id='post-container'>
       {/* image */}
-        {post?.image
+        {image
         ? <div>
-          <img src={post?.image} alt="food image" className='post-image'/>
+          <img src={image} alt="food image" className='post-image'/>
         </div> 
         : <div>
-          {/* <img src={defaultProfilePic} alt=" default profile pic" className='post-image'/> */}
           <p>IMAGE HERE</p>
         </div>}
 
       <div className='post-details'>
         {/* recipe title */}
-        <h3 id="post-title">{post?.name}</h3>
+        <h3 id="post-title">{name}</h3>
 
         {/* rating */}
-        <p id="rating">Rating: {post?.rating}</p>
+        <p id="rating">Rating: {rating}</p>
         <form >
           {/* rating functionality here */}
         </form>
 
         {/* date */}
-        <p id="date">Date Posted: {post?.date}</p>
+        <p id="date">Date Posted: {date}</p>
 
         {/* recipe caption / instructions */}
-        <p id="post-caption">{post?.text}</p>
+        <p id="post-caption">{text}</p>
 
       </div>
     </div>

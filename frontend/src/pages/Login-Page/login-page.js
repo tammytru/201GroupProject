@@ -47,7 +47,7 @@ export default function LoginPage( {isUser, setisUser, userID, setuserID} ) {
                 {
                     headers: { 
                         'Content-Type': 'application/json',
-                        'Access-Control-Allow-Origin': "*",
+                        'Access-Control-Allow-Origin': "*"
                     },
                     // withCredentials: true
                 })

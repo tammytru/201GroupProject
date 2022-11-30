@@ -24,12 +24,11 @@ export default function Feed() {
     const renderFeed = (
         <div>
             {
-                Object.keys(posts).map(p => {
-                    var i = parseInt(p)+1;
+                posts.map((p, index) => {
                     return (
                         <div>
-                            <Post postID={i} />
-                            <br id="break"/>
+                            <Post key={index} rating={p.rating} date={p.date} name={p.name} text={p.text} image={p.image} postID={index} />
+                            <br />
                         </div>
                     )
                 })
