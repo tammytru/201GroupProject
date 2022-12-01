@@ -6,7 +6,7 @@ This project uses a React frontend and Java Servlet backend with MySQL database.
 
 ### 1. download the React app
 
-Clone this repo and run 'npm install' to download all the dependencies.
+Clone this repo and run 'npm install' also run 'npm install styled-components' and 'npm install react-icons' to download all the dependencies.
 
 ### 2. download the Java backend
 
