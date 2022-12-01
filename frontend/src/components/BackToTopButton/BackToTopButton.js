@@ -1,25 +1,38 @@
-
-export default function BackToTopButton() {
-    return (
-      <div className="App">
+import React, {useState} from 'react';
+import {FaArrowCircleUp} from 'react-icons/fa';
+import { Button } from './styles';
   
-        <header className="App-header">
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
+const BackToTopButton = () =>{
   
-          
-        </header>
-      </div>
-    );
-  }
+  const [visible, setVisible] = useState(false)
   
+  const toggleVisible = () => {
+    const scrolled = document.documentElement.scrollTop;
+    if (scrolled > 300){
+      setVisible(true)
+    } 
+    else if (scrolled <= 300){
+      setVisible(false)
+    }
+  };
   
+  const scrollToTop = () =>{
+    window.scrollTo({
+      top: 0, 
+      behavior: 'smooth'
+      /* you can also use 'auto' behaviour
+         in place of 'smooth' */
+    });
+  };
+  
+  window.addEventListener('scroll', toggleVisible);
+  
+  return (
+    <Button>
+     <FaArrowCircleUp onClick={scrollToTop} 
+     style={{display: visible ? 'inline' : 'none'}} />
+    </Button>
+  );
+}
+  
+export default BackToTopButton;

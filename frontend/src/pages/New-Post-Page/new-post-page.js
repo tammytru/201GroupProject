@@ -88,6 +88,7 @@ export default function NewPostPage( ) {
                     <textarea 
                         type="text" 
                         name="text" 
+                        class="captext"
                         onChange={(e) => setText(e.target.value)} 
                         value={text} 
                         cols={50} 
