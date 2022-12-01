@@ -75,3 +75,7 @@ button[type="submit"] {
     gap: 5px;
     margin: 10px;
 }
+
+#search-feed {
+    margin-top: 2em;
+}

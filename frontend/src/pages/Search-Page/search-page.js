@@ -18,33 +18,7 @@ export default function SearchPage( ) {
 		setSubmitted(false);
 	};
 
-	// // Handling the form submission
-	// const handleSubmit = (e) => {
-	// 	e.preventDefault();
-	// 	if (search === '' ) {
-	// 		setError(true);
-	// 	} else {
-	// 		setSubmitted(true);
-	// 		setError(false);
-	// 		console.log('search: ', search);
-	// 		setSearch('');
-	// 		setisSearch(true);
-	// 	}
-	// };
-
 	const [posts, setPosts] = useState([])
-
-    // const URL = "/Assignment4Backend/GetExplorePagePosts";
-    // useEffect (() => {
-    //     try {
-    //     axios.get(URL).then((response) => {
-    //         console.log(response)
-    //         setPosts(response.data);
-    //     })
-    //     } catch (err) {
-    //     console.log(err)
-    //     }
-    // }, []);
 
 	const handleSubmit = async (e) => {
 		e.preventDefault();
@@ -53,26 +27,19 @@ export default function SearchPage( ) {
 			window.alert("Please enter a search term");
 		} else {
 			try {
-				const URL = "/Assignment4Backend/GetPostByKeyWord?keyWord=" + search;
+				const URL = "/Assignment4Backend/GetPostsByKey?keyWord=" + search;
 				axios.get(URL).then((response) => {
 					console.log(response)
+					if(response.data.length === 0) { window.alert('No posts with that keyword'); setSearch('') }
 					setPosts(response.data);
+					setSubmitted(true)
 					renderFeed()
 				})
 					
 			} catch (err) {
 				console.log(err.response?.status)
-				// if(!err?.response) {
-				// 	// setErrMsg('No Server Response')
-				// } else if (err.response?.status === 400) {
-				// 	// setErrMsg('Missing username or password')
-				// 	setErrorMessages({ name: "e400", message: errors.e400 });
-				// } else if (err.response?.status === 401) {
-				// 	// setErrMsg('Unauthorized');
-				// } else {
-				// 	// setErrMsg('Login Failed')
-				// }
-				// // errRef.current.focus();
+				window.alert('search error')
+
 			} 
 		}
 	}
@@ -90,7 +57,7 @@ export default function SearchPage( ) {
                 })
             }
         </div>
-    )
+	)
 
 	// Showing error message if error is true
 	const errorMessage = () => {
@@ -126,6 +93,9 @@ export default function SearchPage( ) {
 				<div className="button-container">
 					<input type="submit" />
 				</div> 
+				<div id="search-feed">
+					{submitted ? renderFeed : <div></div>}
+				</div>
 			</form>
 		</div>
 	);
