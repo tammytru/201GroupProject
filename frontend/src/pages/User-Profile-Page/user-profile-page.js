@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './styles.css';
 import axios from '../../api/axios';
 import defaultProfilePic from '../../assets/user_smile.png' 
+import { Feed } from '../../components';
 
 
 export default function UserProfilePage( { userID} ) {
@@ -42,6 +43,7 @@ export default function UserProfilePage( { userID} ) {
       
       <button onClick={logout}>Log Out</button>
       {/* <Link exact="true" to="/" onClick={logout}>Log Out</Link> */}
+      <Feed userProfileFeed={true} />
     </div>
   );
 

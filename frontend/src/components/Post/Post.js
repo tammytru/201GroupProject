@@ -2,8 +2,31 @@ import React, {useEffect} from 'react';
 import './styles.css';
 import axios from '../../api/axios';
 
-export default function Post({ postID, image, date, rating, name, text }) {
+export default function Post({ postID, image, date, rating, name, text, userProfileFeed}) {
   const [post, setPost] = React.useState();
+
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+
+    try {
+      console.log(postID)
+        const URL = "/Assignment4Backend/Recipe?postID=" + postID;
+        const response = await axios.delete(URL);
+        console.log(response.status)
+        // .then((response) => {
+        //     console.log(response)
+        //     setpostID(response.data.postID)
+        //     setName('')
+        //     setText('')
+        //     setImg('')
+        //     setRating(0)
+        //     window.alert("Post Successful!")
+        // })
+    } catch (err) {
+        window.alert("Post Failed")
+        console.log("error in new-post-page", err.response)
+    }
+  }
 
   return (
     <div id='post-container'>
@@ -31,6 +54,13 @@ export default function Post({ postID, image, date, rating, name, text }) {
 
         {/* recipe caption / instructions */}
         <p id="post-caption">{text}</p>
+
+        {userProfileFeed 
+        ?
+          <input type="button" name="delete" onClick={handleSubmit} value="Delete" />
+        :
+          <div></div>
+        }
 
       </div>
     </div>
