@@ -7,6 +7,7 @@ export default function SearchPage( ) {
 
 	// States for registration
 	const [search, setSearch] = useState('');
+	const [noResult, setnoResult] = useState(false);
 
 	// States for checking the errors
 	const [submitted, setSubmitted] = useState(false);
@@ -30,11 +31,12 @@ export default function SearchPage( ) {
 				const URL = "/Assignment4Backend/GetPostsByKey?keyWord=" + search;
 				axios.get(URL).then((response) => {
 					console.log(response)
-					if(response.data.length === 0) { window.alert('No posts with that keyword'); setSearch('') }
+					if(response.data.length === 0) { setnoResult(true); setSearch('') }
 					setPosts(response.data);
 					setSubmitted(true)
 					renderFeed()
 				})
+				setnoResult(false)
 					
 			} catch (err) {
 				console.log(err.response?.status)
@@ -71,6 +73,17 @@ export default function SearchPage( ) {
 			</div>
 		);
 	};
+	const noResultMessage = () => {
+		return (
+			<div
+				className="error"
+				style={{
+					display: noResult ? '' : 'none',
+				}}>
+				<h1>No posts with that search term.</h1>
+			</div>
+		);
+	};
 
 	return (
 		<div className="form">
@@ -97,6 +110,7 @@ export default function SearchPage( ) {
 					{submitted ? renderFeed : <div></div>}
 				</div>
 			</form>
+			{noResultMessage()}
 		</div>
 	);
 }

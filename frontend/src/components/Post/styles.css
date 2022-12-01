@@ -1,13 +1,13 @@
 #post-container {
-    width: 60%;
     box-shadow: 5px 5px 5px 5px grey;
+    width: 40%;
+    border: 2px solid black;
     display: flex;
     /* align-items: center;
     justify-content: center; */
     flex-direction: column;
-    margin-left: 20%;
     border-radius: 10px 10px 10px 10px;
-
+    margin-left: 30%;
 
 }
 

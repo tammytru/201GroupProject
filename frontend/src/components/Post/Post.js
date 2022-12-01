@@ -13,15 +13,7 @@ export default function Post({ postID, image, date, rating, name, text, userProf
         const URL = "/Assignment4Backend/Recipe?postID=" + postID;
         const response = await axios.delete(URL);
         console.log(response.status)
-        // .then((response) => {
-        //     console.log(response)
-        //     setpostID(response.data.postID)
-        //     setName('')
-        //     setText('')
-        //     setImg('')
-        //     setRating(0)
-        //     window.alert("Post Successful!")
-        // })
+        window.alert("Successfully deleted post")
     } catch (err) {
         window.alert("Post Failed")
         console.log("error in new-post-page", err.response)
