@@ -32,17 +32,11 @@ export default function UserProfilePage( { userID} ) {
 
   const renderUserProfile = (
     <div className='user-profile-page'>
-      {user?.profileImage
-        ? <div>
-          <img src={user?.profileImage} alt="user profile pic"/>
-        </div> 
-        : <div>
-          <img src={defaultProfilePic} alt=" default profile pic"/>
-        </div>}
-      <h1>WELCOME {user?.name}</h1>
-      
-      <button onClick={logout}>Log Out</button>
+      <h1>welcome, {user?.name} ! ☻</h1>
+      <div className='gettingDivvyWitIt'>
+      <button type="logout" onClick={logout}>Log Out</button>
       {/* <Link exact="true" to="/" onClick={logout}>Log Out</Link> */}
+      </div>
       <Feed userProfileFeed={true} />
     </div>
   );

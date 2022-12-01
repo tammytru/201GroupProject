@@ -2,7 +2,7 @@ import './App.css';
 import React, { useState } from 'react';
 import { Switch, Route} from 'react-router-dom'
 import { LoginPage, ExplorePage, SearchPage, NewPostPage, FollowingPage, MessagesPage, UserProfilePage } from '../../pages'
-import { NavBar, PrivateRoute } from '../../components';
+import { BackToTopButton, NavBar, PrivateRoute } from '../../components';
 import { RegisterPage } from '../index';
 
 export default function App() {
@@ -33,6 +33,7 @@ export default function App() {
             </Route>
             <PrivateRoute exact path="/userprofile" isUser={isUser} setisUser={setisUser} userID={userID} component={UserProfilePage}/>
         </Switch>
+        <BackToTopButton />
         </div>
     );
 }
