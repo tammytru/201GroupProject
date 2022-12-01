@@ -29,24 +29,26 @@ export default function MessagesPage( props ) {
     
     
     const sendMessage = () => {
-        ws.send(inputValue);
+        ws.send(sessionStorage.getItem('username') + ": " + inputValue);
     }
 
 
     return (
-        <div>
-            <form name="chatform">
-                <input type="text" name="message" value={inputValue} onChange={event => setValue(event.target.value)} /><br />
-                <input type="button" value="Send Message" onClick={sendMessage} />
+        <div className='messages-page'>
+            <form name="chatform" className="chat-form">
+                <input type="text" id="send-field" name="message" value={inputValue} onChange={event => setValue(event.target.value)} required /><br />
+                <input type="button" id="send-button" value="Send Message" onClick={sendMessage} />
                 <br />
             </form>
-            <br />
+            <div className='messages'>
+                <br/>
             {
                 messages.map(message => {
                     //style this:
-                    return <h1>{message}</h1>
+                    return <p id="p">{message}</p>
                 })
             }
+            </div>
 
         </div>
     );

@@ -9,7 +9,7 @@ export default function Feed( {userProfileFeed} ) {
 
     var URL = "";
     if(userProfileFeed) {
-        URL = "/Assignment4Backend/GetAllPosts?userID=" + localStorage.getItem('userID'); 
+        URL = "/Assignment4Backend/GetAllPosts?userID=" + sessionStorage.getItem('userID'); 
     } else {
         URL = "/Assignment4Backend/GetExplorePagePosts";
     }

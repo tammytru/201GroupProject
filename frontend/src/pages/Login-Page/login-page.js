@@ -21,9 +21,9 @@ export default function LoginPage( {isUser, setisUser, userID, setuserID} ) {
 
     useEffect(() => {
         if(userID !== -1) {
-            localStorage.setItem('userID', userID)
-            localStorage.setItem('isUser', true)
-            localStorage.setItem('username', user)
+            sessionStorage.setItem('userID', userID)
+            sessionStorage.setItem('isUser', true)
+            sessionStorage.setItem('username', user)
             setUser('')
             setPassword('')
             setisUser(true);
@@ -129,7 +129,7 @@ export default function LoginPage( {isUser, setisUser, userID, setuserID} ) {
     
     return (
         <div>
-        {localStorage.getItem('isUser') ? <div><ExplorePage/></div> : renderForm}
+        {sessionStorage.getItem('isUser') ? <div><ExplorePage/></div> : renderForm}
         </div>
     )
 }

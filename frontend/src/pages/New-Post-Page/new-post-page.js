@@ -13,7 +13,7 @@ export default function NewPostPage( ) {
     const [text, setText] = useState('')
     const [img, setImg] = useState('')
     const [rating, setRating] = useState(0);
-    const userID = localStorage.getItem('userID')
+    const userID = sessionStorage.getItem('userID')
     var today = new Date();
     const date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate()
 
@@ -131,7 +131,7 @@ export default function NewPostPage( ) {
 
     return (
         <div className=''>
-          {localStorage.getItem('isUser') ? renderForm : <div>LOADING</div>}
+          {sessionStorage.getItem('isUser') ? renderForm : <div>LOADING</div>}
         </div>
         
     );

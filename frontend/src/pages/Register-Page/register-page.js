@@ -19,9 +19,9 @@ export default function RegisterPage( {isUser, setisUser, userID, setuserID} ) {
 	// Update userID when user is authenticated
 	useEffect(() => {
         if(userID !== -1) {
-			localStorage.setItem('userID', userID)
-            localStorage.setItem('isUser', true)
-            localStorage.setItem('username', user)
+			sessionStorage.setItem('userID', userID)
+            sessionStorage.setItem('isUser', true)
+            sessionStorage.setItem('username', user)
             setUser('')
             setPassword('')
 			setHint('')

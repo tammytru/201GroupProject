@@ -10,15 +10,15 @@ export default function UserProfilePage( { userID} ) {
 
   const logout = (event) => {
     event.preventDefault();
-    if(localStorage.getItem('isUser')) { 
+    if(sessionStorage.getItem('isUser')) { 
       console.log(userID)
-      localStorage.clear();
+      sessionStorage.clear();
       window.location.reload(false)
     }
   };
 
-  // console.log(localStorage.getItem('userID'))
-  const URL = "/Assignment4Backend/RegisterUser?userID=" + localStorage.getItem("userID");
+  // console.log(sessionStorage.getItem('userID'))
+  const URL = "/Assignment4Backend/RegisterUser?userID=" + sessionStorage.getItem("userID");
   useEffect (() => {
     try {
       axios.get(URL).then((response) => {
@@ -43,7 +43,7 @@ export default function UserProfilePage( { userID} ) {
 
   return (
     <div>
-      {localStorage.getItem('isUser') ? renderUserProfile : <div>LOADING</div>}
+      {sessionStorage.getItem('isUser') ? renderUserProfile : <div>LOADING</div>}
     </div>
     
   );

@@ -7,7 +7,7 @@ const PrivateRoute = ( { isUser, setisUser, userID, setuserID, component: Compon
 
     return (
         <Route>
-            { localStorage.getItem('isUser') ?
+            { sessionStorage.getItem('isUser') ?
                 <Component isUser={isUser} setisUser={setisUser} userID={userID} setuserID={setuserID} />
             :
                 <Redirect to='/login'/>
