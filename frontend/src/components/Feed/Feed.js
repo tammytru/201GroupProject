@@ -30,8 +30,7 @@ export default function Feed( {userProfileFeed} ) {
     const renderFeed = (
         <div>
             {
-                posts.map((p, index) => {
-                    console.log(p)
+                posts.reverse().map((p, index) => {
                     return (
                         <div>
                             <Post key={index} rating={p.rating} date={p.date} name={p.name} text={p.text} image={p.image} postID={p.postID} userProfileFeed={userProfileFeed} />
