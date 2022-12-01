@@ -49,7 +49,7 @@ export default function Post({ postID, image, date, rating, name, text, userProf
 
         {userProfileFeed 
         ?
-          <input type="button" name="delete" onClick={handleSubmit} value="Delete" />
+          <input type="button" onClick={handleSubmit} value="Delete" />
         :
           <div></div>
         }
