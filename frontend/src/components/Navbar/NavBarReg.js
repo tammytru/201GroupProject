@@ -39,7 +39,7 @@ const linkStyles_middle = {
   color: 'black',
   textDecoration: 'none',
   fontSize: '20px',
-  marginLeft: '2em',
+  marginLeft: '7em',
 };
 
 const linkStyles_right = {
