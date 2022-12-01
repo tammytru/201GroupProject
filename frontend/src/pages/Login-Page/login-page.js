@@ -47,7 +47,7 @@ export default function LoginPage( {isUser, setisUser, userID, setuserID} ) {
                 {
                     headers: { 
                         'Content-Type': 'application/json',
-                        'Access-Control-Allow-Origin': "*"
+                        //"Access-Control-Allow-Origin,": "*"
                     },
                     // withCredentials: true
                 })
@@ -68,6 +68,7 @@ export default function LoginPage( {isUser, setisUser, userID, setuserID} ) {
                 
         } catch (err) {
             console.log(err.response?.status)
+            console.log(err);
             if(!err?.response) {
                 // setErrMsg('No Server Response')
             } else if (err.response?.status === 400) {
