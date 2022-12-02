@@ -17,6 +17,7 @@ Import the Dynamic Web Project into Eclipse.\
 Open up the Constants.java file and paste your JDBC SQL url into the String variable.\
 This allows the servlets to connect to the SQL database on your computer.\
 NOTE: where it says password, replace it with your SQL Workbench password you set up.\
+Run the Tomcat server, and run this project on the server.
 
 ### 3. create the MySQL database
 
