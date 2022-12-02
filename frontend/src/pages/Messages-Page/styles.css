@@ -23,6 +23,7 @@
     color: #000;
     padding: 0.5em;
     border-radius: 10px;
+    width: auto;
 }
 
 #send-button:hover {
