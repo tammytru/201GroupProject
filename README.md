@@ -1,68 +1,43 @@
-# 201GroupProject
+# CSCI 201 Group Project (Team 9)
 
-## Setting up the text stack
+## Running the Web App
 
-This project uses a React frontend and Java Servlet backend with MySQL database.\
+This project uses a React frontend and Java Servlet backend with a Google Cloud SQL database.
 
-### 1. download the React app
+### 1. clone the repo
 
-Clone this repo and run 'npm install' to download all the dependencies.
+Before you start, download node.js if you do not already have it by clicking [https://nodejs.org/en/download/](here). 
+Clone this repo. 
 
-### 2. download the Java backend
+### 2. start the Java backend Tomcat server
 
-Clone the repo at [https://github.com/zmerchant17/Assignment4Backend](https://github.com/zmerchant17/Assignment4Backend).\
-It doesn't matter what folder the repo is on your computer.\
+Open Eclipse and import the 201-Group-Project -> backend -> Assignment4Backend folder as a Dynamic Web Project. 
+Start the Tomcat server and run the Assignment4Backend project on the server. 
 
-Import the Dynamic Web Project into Eclipse.\
-Open up the Constants.java file and paste your JDBC SQL url into the String variable.\
-This allows the servlets to connect to the SQL database on your computer.\
-NOTE: where it says password, replace it with your SQL Workbench password you set up.\
-Run the Tomcat server, and run this project on the server.
+### 3. start the React frontend
 
-### 3. create the MySQL database
+Open Visual Studio Code and import the entire 201-Group-Project repo. 
+If your backend Tomcat server is not running on port 8080, you must change the port connection in the frontend project to match.
+1. Open `axios.js` (frontend -> src -> api -> axios.js) and change the port to match your Tomcat server port. 
+2. Open `messages-page.js` (frontend -> src -> pages -> Messages-Page -> messages-page.js) and update the port in the url on line 10. 
+Open a terminal and navigate into the `frontend` folder.  
+Run `npm start` to start the project.  
+The react app will run on localhost using port 3000: [http://localhost:3000](http://localhost:3000). 
+NOTE: if your browser has CORS enabled, the frontend will have trouble connecting to the backend. To fix this problem, scroll down to troubleshooting to see how to disable CORS. 
 
-In the backend repo, open the file titled 'database.sql'.\
-Copy all that code.\
-Start your SQL server and open MySQL Workbench.\
-After typing in your password, go to 'schemas' and create a new one.\
-Name that schema 'project' and click 'Apply'.\
-On the next page, past all the code from database.sql into there and save.\
-This will create a schema with all the neccesary tables and names.\
-
-
-
-## Connecting the back and front ends
-
-### 1. run the React app
-
-Do 'npm start' in the terminal to run the app in the development mode.\
-NOTE: make sure you are inside the 'frontend' folder.\
-The react app will run on localhost using port 3000: [http://localhost:3000](http://localhost:3000) \
-
-### 2. start the backend server
-
-Run the backend project you imported into eclipse using Tomcat.\
-Find the port your Tomcat server is running on (most likely it will be 8080, but just make sure).\
-Then go back to the React app and navigate to the 'axios.js' file (src -> api -> axios.js).\
-Depending on what port your Tomcat server is on, change the 'baseURL' to match the port.\
-This allows axios to find the endpoints our servlet is creating.\
-
-### 3. test the app
-
-You should still be able to make changes to the App and Java backend while both servers are running.\
-You can test features like login by adding values into your database through workbench and testing the verification in the login form.\
+### 4. test the app!
 
 ## Troubleshooting
 
 ### CORS Error
 
 If you get an error that says something like:  
-'Access to XMLHttpRequest ... from origin ... has been blocked by CORS policy..."\
-This just means there is some Cross Origin errors from communicating on two different ports.\
-I have not figured out if this is a backend or frontend issue yet but was able to bypass the problem by diabling CORS in chrome.\
-To do this: \
-1. open your computer terminal \
-2. run this command: \
-'open -n -a /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --args --user-data-dir="/tmp/chrome_dev_test" --disable-web-security'
+'Access to XMLHttpRequest ... from origin ... has been blocked by CORS policy..."
+This just means there is some Cross Origin errors from communicating on two different ports.
+I have not figured out if this is a backend or frontend issue yet but was able to bypass the problem by diabling CORS in chrome.
+To do this: 
+1. open your computer terminal 
+2. run this command: 
+`open -n -a /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --args --user-data-dir="/tmp/chrome_dev_test" --disable-web-security`
 3. a new chrome tab should open up and you can just reopen the app by going to [http://localhost:3000](http://localhost:3000).
 
