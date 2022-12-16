@@ -21,6 +21,7 @@ If your backend Tomcat server is not running on port 8080, you must change the p
 1. Open `axios.js` (frontend -> src -> api -> axios.js) and change the port to match your Tomcat server port. 
 2. Open `messages-page.js` (frontend -> src -> pages -> Messages-Page -> messages-page.js) and update the port in the url on line 10. 
 Open a terminal and navigate into the `frontend` folder.  
+Run `npm install` to install all dependencies. 
 Run `npm start` to start the project.  
 The react app will run on localhost using port 3000: [http://localhost:3000](http://localhost:3000). 
 NOTE: if your browser has CORS enabled, the frontend will have trouble connecting to the backend. To fix this problem, scroll down to troubleshooting to see how to disable CORS. 
