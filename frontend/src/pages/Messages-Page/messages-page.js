@@ -7,7 +7,7 @@ export default function MessagesPage( props ) {
     const [ws, setWS] = useState(null);
 
     useEffect(() => {
-        setWS(new WebSocket("ws://localhost:8080/Assignment4Backend/ws"));
+        setWS(new WebSocket("ws://localhost:3456/Assignment4Backend/ws"));
     }, []);
 
     useEffect(() => {
