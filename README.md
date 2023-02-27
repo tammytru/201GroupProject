@@ -2,10 +2,8 @@
 ### CSCI 201 Group Project (Team 9)
 
 
-## Project Demo
+## Project Videos
 [Reciplease Demo Video](https://drive.google.com/file/d/1-DTT5_hdruA6I3asji0HsUiLTy0SdIrn/view?usp=share_link)
-
-## How We Built It
 [Reciplease Text-Stack Presentation](https://drive.google.com/file/d/1fcdL_nVnH1FGKAgsCJxmdgQuqbfmmykU/view?usp=share_link)
 
 
